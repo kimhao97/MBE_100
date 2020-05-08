@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+ <response>
+	<mqttstate>~constate~</mqttstate>
+	<status0>~status(0)~</status0>
+	<status1>~status(1)~</status1>
+	<status2>~status(2)~</status2>
+	<status3>~status(3)~</status3>
+	<status4>~status(4)~</status4>
+	<status5>~status(5)~</status5>
+	<status6>~status(6)~</status6>
+	<status7>~status(7)~</status7>
+    <statusOut0>~status_OUT(0)~</statusOut0>
+    <statusOut1>~status_OUT(1)~</statusOut1>
+    <statusOut2>~status_OUT(2)~</statusOut2>
+    <statusOut3>~status_OUT(3)~</statusOut3>
+    <statusOut4>~status_OUT(4)~</statusOut4>
+    <statusOut5>~status_OUT(5)~</statusOut5>
+    <statusOut6>~status_OUT(6)~</statusOut6>
+    <statusOut7>~status_OUT(7)~</statusOut7>
+    <IPAddress>~IPAddress~</IPAddress>
+    <Subnet>~Subnet~</Subnet>
+    <Gateway>~Gateway~</Gateway>
+    <DNS>~DNS~</DNS>
+    <dhcp>~dhcp~</dhcp>
+    <http>~http~</http>
+    <mqtt>~mqtt~</mqtt>
+    <modbus_tcp>~modbus_tcp~</modbus_tcp>
+ </response>

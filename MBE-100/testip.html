@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BKLOGY - Data Acquisition Device">
+    <meta name="keywords" content="device monitoring, system monitor, ">
+    <meta name="author" content="BKLOGY - BK Technology">
+    <title>BKLOGY-Data Acquisition Device</title>
+    <link rel="shortcut icon" href="assets/img/bk-icon.png">
+
+    <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- MAIN CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/mchp.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body >
+<div class="mail">
+<h2>Input an IP address and Submit</h2>
+<form name="form1" action="#"> 
+<ul>
+    
+<div class="col-sm-9"> 
+    <ul>
+  <div class="form-group has-success has-feedback">
+ 
+      <label for="inputSuccess2">Input with success</label>
+  
+    <input type='text'  class="form-control" name='text1' onkeyup= "checkip(document.form1.text1)"/>
+
+      <span class="glyphicon glyphicon-ok form-control-feedback" id="2"  "></span>
+            <span class="glyphicon glyphicon-remove form-control-feedback" id="4" style="visibility: hidden;"></span>
+
+  
+</div>
+ 
+  
+ 
+    
+</ul>
+  </div> 
+
+<li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateIPaddress(document.form1.text1)"/></li>
+  
+
+</ul>
+ 
+  
+</div>
+</form>
+</div>  
+
+         
+
+    <!--
+        ===========================================================
+        END PAGE
+        ===========================================================
+        -->
+
+    <!--
+        ===========================================================
+        Placed at the end of the document so the pages load faster
+        ===========================================================
+        -->
+    <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/retina/retina.min.js"></script>
+    <script src="assets/plugins/nicescroll/jquery.nicescroll.js"></script>
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+
+
+
+ <script type="text/javascript">
+function ValidateIPaddress(inputText)
+ {
+ var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+ if(inputText.value.match(ipformat))
+ {
+ document.form1.text1.focus();
+ return true;
+ }
+ else
+ {
+ alert("You have entered an invalid IP address!");
+ document.form1.text1.focus();return false;
+ }
+ }
+ function checkip(inputText)
+ {
+ var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+ if(inputText.value.match(ipformat))
+ {
+     document.getElementById('2').style.visibility = "visible";
+      document.getElementById('4').style.visibility = "hidden";
+ }
+ else
+ {
+  document.getElementById('2').style.visibility = "hidden";
+   document.getElementById('4').style.visibility = "visible";
+   document.getElementById('4').style.color="red";
+ }
+ }
+ 
+</script>
+</body>
+
+</html>

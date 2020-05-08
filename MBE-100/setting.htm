@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BKLOGY - Data Acquisition Device">
+    <meta name="keywords" content="device monitoring, system monitor, ">
+    <meta name="author" content="BKLOGY - BK Technology">
+    <title>BKLOGY-Data Acquisition Device</title>
+    <link rel="shortcut icon" href="assets/img/bk-icon.png">
+
+    <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- MAIN CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/mchp.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body class="tooltips" onload="newAJAXCommand('status.xml');">
+
+    <!--
+		===========================================================
+		BEGIN PAGE
+		===========================================================
+		-->
+    <div class="wrapper">
+        <!-- BEGIN TOP NAV -->
+        <div class="top-navbar">
+            <div class="top-navbar-inner">
+
+                <!-- Begin Logo brand -->
+                <div class="logo-brand">
+                    <a href="index.htm"><img src="assets/img/logo_bklogy.png" alt="Bklogy logo"></a>
+                </div>
+                <!-- /.logo-brand -->
+                <!-- End Logo brand -->
+
+                <div class="top-nav-content">
+
+                    <!-- Begin button sidebar left toggle -->
+                    <div class="btn-collapse-sidebar-left">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <!-- /.btn-collapse-sidebar-left -->
+                    <!-- End button sidebar left toggle -->
+
+                    <!-- Begin button sidebar right toggle -->
+
+                    <!-- /.btn-collapse-sidebar-right -->
+                    <!-- End button sidebar right toggle -->
+
+                    <!-- Begin button nav toggle -->
+                    <div class="btn-collapse-nav" data-toggle="collapse" data-target="#main-fixed-nav">
+                        <i class="fa fa-plus icon-plus"></i>
+                    </div>
+                    <!-- /.btn-collapse-sidebar-right -->
+                    <!-- End button nav toggle -->
+
+
+                    <!-- Begin user session nav -->
+                    <ul class="nav-user navbar-right">
+                        <h1 class="page-heading">
+                            <b>DATA ACQUISITTION</b>
+
+                        </h1>
+
+                    </ul>
+                    <!-- End user session nav -->
+
+                    <!-- End Collapse menu nav -->
+                </div>
+                <!-- /.top-nav-content -->
+            </div>
+            <!-- /.top-navbar-inner -->
+        </div>
+        <!-- /.top-navbar -->
+        <!-- END TOP NAV -->
+
+
+
+        <!-- BEGIN SIDEBAR LEFT -->
+        <div class="sidebar-left sidebar-nicescroller">
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="index.htm">
+                        <i class="fa fa-home icon-sidebar"></i> HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.htm">
+                        <i class="fa fa-dashboard icon-sidebar"></i> Dashboard
+                    </a>
+                </li>
+                <li class="static">SYSTEM SETTING</li>
+                <li>
+                    <a href="setting.htm">
+                        <i class="fa fa-gears icon-sidebar"></i> Network
+                    </a>
+                </li>
+                <li>
+                    <a href="topic.htm">
+                        <i class="fa fa-list icon-sidebar"></i> Topic
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-left -->
+        <!-- END SIDEBAR LEFT -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <!-- Begin page heading -->
+                <h1 class="fa fa-gears page-heading"> SET NETWORK PARAMETER <small>~Apps~</small> </h1>
+                <!-- End page heading -->
+                <div class="row">
+                    <div class="col-lg-9">
+                        <!-- BEGIN TODAY VISITOR TILES -->
+                        <div class="panel panel-info panel-square panel-no-border">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">CHANGE NETWORK PARAMETER</h3>
+                            </div>
+                            <form method="post" action="setting.htm" name="broker_config">
+                                <ul class="list-group">
+                                   
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                           
+                                           <p> <input type="checkbox" id ="http" onclick="visible()" style =" width: 20px;
+    height: 20px; border:5px" value ="~http~"  > HTTP</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                               <p> <input type="checkbox" id ="mqtt" onclick="visible()" style =" width: 20px;
+    height: 20px; border:5px" value ="~mqtt~"  >  MQTT</p>
+                                           
+                                         
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                             <p> <input type="checkbox" id ="modbus_tcp" onclick="visible()" style =" width: 20px;
+    height: 20px; border:5px" value ="~modbus_tcp~"  >  MODBUS_TCP/IP</p>
+                                         
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </form>
+
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel panel-success panel-block-color -->
+                        <!-- END TODAY VISITOR TILES -->
+
+                    </div>
+                    <!-- /.col-sm-6 -->
+
+
+                    <!-- /.col-sm-6 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-9">
+                        <!-- BEGIN TODAY VISITOR TILES -->
+                        <div class="panel panel-info panel-square panel-no-border">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">CHLORINE SCALE PARAMETER</h3>
+                            </div>
+                            <div class=""></div>
+                            <li class="list-group-item">
+                                   <div class="row">       
+                                        <div class="col-sm-3">    
+                                             <p> <input type="checkbox"  id="dhcp_check" onclick="visible()" style =" width: 20px; height: 20px; border:5px" check>  DHCP</p></div>  
+                                            <div class="col-sm-1"><button type="submit" class="btn btn-success" onclick="Enable_dhcp()" id="savedhcp" ><i class="fa fa-floppy-o" ></i> Save</button>
+                                            </div>
+                                    </div>
+                            </li>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel panel-success panel-block-color -->
+                        <!-- END TODAY VISITOR TILES -->
+
+                    </div>
+                    <!-- /.col-sm-6 -->
+
+
+                    <!-- /.col-sm-6 -->
+                </div>
+               
+                <!-- /.row -->
+                <div class= "row" id="test" style="visibility: hidden;">
+                    <div class= "col-lg-9">
+                         <div class="panel panel-info panel-square panel-no-border">
+                        
+                            <form method="post" action="setting.htm" name="ip_config" id ="test1">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                       
+                                        <div class="row">
+                                             
+                                            <div class="col-sm-3">IPAddress:</div>
+
+                                            <div class="col-sm-9"> 
+                                                <div class="form-group has-success has-feedback"> <input type="text" class="form-control" id= "IPAddress" placeholder="Enter new IPAddress" name="IPAddress" maxlength="15" value="~IPAddress~"  onchange= "checkip(document.ip_config.IPAddress)">
+                                                    <span class="glyphicon glyphicon-ok form-control-feedback" id="ip_success"  "></span>
+                                                         <span class="glyphicon glyphicon-remove form-control-feedback" id="ip_error" style="visibility: hidden;"></span>                          
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                      
+                                        <div class="row">
+                                            
+                                                     <div class="col-sm-3">Subnet:</div>
+                                            <div class="col-sm-9"> 
+                                                 <div class="form-group has-success has-feedback"><input type="text" class="form-control" id="Subnet" placeholder="Enter new Subnet Mask" name="Subnet" maxlength="15" value="~Subnet~"onchange= "checkSubnet(document.ip_config.Subnet)">
+                                                      <span class="glyphicon glyphicon-ok form-control-feedback" id="Sub_success"  "></span>
+                                                         <span class="glyphicon glyphicon-remove form-control-feedback" id="Sub_error" style="visibility: hidden;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                     <li class="list-group-item">
+                                        
+                                        <div class="row">
+                                           
+                                                      <div class="col-sm-3">Gateway:</div>
+                                            <div class="col-sm-9">
+                                                  <div class="form-group has-success has-feedback"> <input type=" text" class="form-control" id="Gateway" placeholder="Enter new Gateway" name="Gateway" maxlength="15" value="~Gateway~" onchange= "checkGateway(document.ip_config.Gateway)" >
+                                                       <span class="glyphicon glyphicon-ok form-control-feedback" id="Gate_success"  "></span>
+                                                            <span class="glyphicon glyphicon-remove form-control-feedback" id="Gate_error" style="visibility: hidden;"></span>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        
+                                        <div class="row">
+                                                     <div class="col-sm-3">DNS:</div>
+                                            <div class="col-sm-9">
+                                                <div class="form-group has-success has-feedback"> <input type="text" class="form-control" id="DNS" placeholder="Enter new DNS " name="DNS" maxlength="40" value="~DNS~"
+                                                onchange= "checkDns(document.ip_config.Gateway)">
+                                                     <span class="glyphicon glyphicon-ok form-control-feedback" id="Dns_success"  "></span>
+                                                      <span class="glyphicon glyphicon-remove form-control-feedback" id="Dns_error" style="visibility: hidden;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-sm-3"></div>
+                                                <div class="col-sm-9"><button type="submit" class="btn btn-success" onclick="check1()" id="save" ><i class="fa fa-floppy-o" ></i> Save</button>
+                                                </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+
+
+            <!-- BEGIN FOOTER -->
+            <footer class="fixed-bottom">
+                &copy; 2018 <a href="http://www.bklogy.com">BKLOGY - BK Technology</a><br />
+                 <div id="dhcp" class="col-sm-1" style="visibility: hidden;">~dhcp~</div>
+ <div class="ui-field-contain">
+                    
+               
+            </footer>
+            <!-- END FOOTER -->
+
+
+        </div>
+        <!-- /.page-content -->
+    </div>
+    <!-- /.wrapper -->
+    <!-- END PAGE CONTENT -->
+
+
+
+    <!-- BEGIN BACK TO TOP BUTTON -->
+    <div id="back-top">
+        <a href="#top"><i class="fa fa-chevron-up"></i></a>
+         
+    </div>
+    <!-- END BACK TO TOP -->
+
+
+    <!--
+		===========================================================
+		END PAGE
+		===========================================================
+		-->
+
+    <!--
+		===========================================================
+		Placed at the end of the document so the pages load faster
+		===========================================================
+		-->
+    <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/retina/retina.min.js"></script>
+    <script src="assets/plugins/nicescroll/jquery.nicescroll.js"></script>
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+
+
+
+    <!-- MAIN APPS JS -->
+
+    <script src="assets/js/apps.js"></script>
+    <script type="text/javascript">
+      var flag_ip=1;
+       var flag_Gate=1;
+        var flag_Subnet=1;
+         var flag_Dns=1;
+         var flag=1;
+ 
+        function visible()
+        {
+flag=0;
+            if(document.getElementById('dhcp_check').checked == false)
+            {
+                  document.getElementById('test').style.visibility = "visible";
+                   document.getElementById('test1').style.visibility = "visible";
+                   document.getElementById('savedhcp').disabled= true; 
+                
+            }
+            else if(document.getElementById('dhcp_check').checked == true)
+            {
+                  document.getElementById('test').style.visibility = "hidden";
+                    document.getElementById('test1').style.visibility = "hidden";
+                    document.getElementById('savedhcp').disabled= false; 
+
+                  
+            }
+        }
+
+ function checkip(inputText)
+ {
+
+ var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+ if(inputText.value.match(ipformat))
+ {
+     document.getElementById('ip_success').style.visibility = "visible";
+      document.getElementById('ip_error').style.visibility = "hidden";
+      flag_ip=1;
+ }
+ else
+ {
+  document.getElementById('ip_success').style.visibility = "hidden";
+   document.getElementById('ip_error').style.visibility = "visible";
+   document.getElementById('ip_error').style.color="red";
+   flag_ip=0;
+ }
+ check();
+ }
+ function checkSubnet(inputText)
+ {
+ var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+ if(inputText.value.match(ipformat))
+ {
+     document.getElementById('Sub_success').style.visibility = "visible";
+      document.getElementById('Sub_error').style.visibility = "hidden";
+      flag_ip=1;
+ }
+ else
+ {
+  document.getElementById('Sub_success').style.visibility = "hidden";
+   document.getElementById('Sub_error').style.visibility = "visible";
+   document.getElementById('Sub_error').style.color="red";
+   flag_ip=0;
+ }
+ check();
+ }
+ function checkGateway(inputText)
+ {
+ var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+ if(inputText.value.match(ipformat))
+ {
+     document.getElementById('Gate_success').style.visibility = "visible";
+      document.getElementById('Gate_error').style.visibility = "hidden";
+      flag_Gate =1;
+ }
+ else
+ {
+  document.getElementById('Gate_success').style.visibility = "hidden";
+   document.getElementById('Gate_error').style.visibility = "visible";
+   document.getElementById('Gate_error').style.color="red";
+   flag_Gate =0;
+
+ }
+ check();
+ }
+  function checkDns(inputText)
+ {
+ var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+ if(inputText.value.match(ipformat))
+ {
+     document.getElementById('Dns_success').style.visibility = "visible";
+      document.getElementById('Dns_error').style.visibility = "hidden";
+      flag_Gate =1;
+ }
+ else
+ {
+  document.getElementById('Dns_success').style.visibility = "hidden";
+   document.getElementById('Dns_error').style.visibility = "visible";
+   document.getElementById('Dns_error').style.color="red";
+   flag_Gate =0;
+
+ }
+ check();
+ }
+ function check()
+ {
+    if(flag_ip==1 && flag_Gate==1 && flag_Dns ==1 && flag_Subnet ==1)
+    {
+      document.getElementById('save').disabled= false; 
+    }
+    else
+    {
+        document.getElementById('save').disabled= true;
+    }
+ }
+ function Enable_dhcp()
+ { flag=0;
+    
+     var http = new XMLHttpRequest();
+            var url = "setting.htm";
+            var params;
+            params = "flagdhcp"+"= 1";   
+            // document.getElementById( string__ ).innerHTML=="";
+            http.open("POST", url, true);
+
+            //Send the proper header information along with the request
+            http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            http.send(params);
+ }
+ function updateStatus(xmlData)
+ { 
+    document.getElementById("dhcp").innerHTML = getXMLValue(xmlData,"dhcp");
+   //  var s = document.getElementById("dhcp").innerHTML;
+    
+    if(document.getElementById("dhcp").innerHTML=="1" && flag==1)
+    {
+      
+                    document.getElementById('test').style.visibility = "hidden";
+                    document.getElementById('test1').style.visibility = "hidden";
+                    document.getElementById('savedhcp').disabled= false; 
+                    document.getElementById('dhcp_check').checked = true;
+    }
+    else if(document.getElementById("dhcp").innerHTML=="0"&&flag==1)
+    {
+        
+                   document.getElementById('test').style.visibility = "visible";
+                   document.getElementById('test1').style.visibility = "visible";
+                   document.getElementById('savedhcp').disabled= true; 
+                   document.getElementById('dhcp_check').checked = false;
+    
+    }
+ }
+  setTimeout("newAJAXCommand('status.xml', updateStatus, true)", 100);
+    </script>
+       
+</body>
+
+</html>

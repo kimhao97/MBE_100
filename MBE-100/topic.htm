@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BKLOGY - Data Acquisition Device">
+    <meta name="keywords" content="device monitoring, system monitor, ">
+    <meta name="author" content="BKLOGY - BK Technology">
+    <title>BKLOGY-Data Acquisition Device</title>
+    <link rel="shortcut icon" href="assets/img/bk-icon.png">
+
+    <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- MAIN CSS (REQUIRED ALL PAGE)-->
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="assets/js/mchp.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body class="tooltips" onload="newAJAXCommand('status.xml');">
+
+    <!--
+		===========================================================
+		BEGIN PAGE
+		===========================================================
+		-->
+    <div class="wrapper">
+        <!-- BEGIN TOP NAV -->
+        <div class="top-navbar">
+            <div class="top-navbar-inner">
+
+                <!-- Begin Logo brand -->
+                <div class="logo-brand">
+                    <a href="index.htm"><img src="assets/img/logo_bklogy.png" alt="Bklogy logo"></a>
+                </div>
+                <!-- /.logo-brand -->
+                <!-- End Logo brand -->
+
+                <div class="top-nav-content">
+
+                    <!-- Begin button sidebar left toggle -->
+                    <div class="btn-collapse-sidebar-left">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <!-- /.btn-collapse-sidebar-left -->
+                    <!-- End button sidebar left toggle -->
+
+                    <!-- Begin button sidebar right toggle -->
+
+                    <!-- /.btn-collapse-sidebar-right -->
+                    <!-- End button sidebar right toggle -->
+
+                    <!-- Begin button nav toggle -->
+                    <div class="btn-collapse-nav" data-toggle="collapse" data-target="#main-fixed-nav">
+                        <i class="fa fa-plus icon-plus"></i>
+                    </div>
+                    <!-- /.btn-collapse-sidebar-right -->
+                    <!-- End button nav toggle -->
+
+
+                    <!-- Begin user session nav -->
+                    <ul class="nav-user navbar-right">
+                        <h1 class="page-heading">
+                            <b>DATA ACQUISITTION</b>
+
+                        </h1>
+
+                    </ul>
+                    <!-- End user session nav -->
+
+                    <!-- End Collapse menu nav -->
+                </div>
+                <!-- /.top-nav-content -->
+            </div>
+            <!-- /.top-navbar-inner -->
+        </div>
+        <!-- /.top-navbar -->
+        <!-- END TOP NAV -->
+
+
+
+        <!-- BEGIN SIDEBAR LEFT -->
+        <div class="sidebar-left sidebar-nicescroller">
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="index.htm">
+                        <i class="fa fa-home icon-sidebar"></i> HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.htm">
+                        <i class="fa fa-dashboard icon-sidebar"></i> Dashboard
+                    </a>
+                </li>
+                <li class="static">SYSTEM SETTING</li>
+                <li>
+                    <a href="setting.htm">
+                        <i class="fa fa-gears icon-sidebar"></i> Network
+                    </a>
+                </li>
+                <li>
+                    <a href="topic.htm">
+                        <i class="fa fa-list icon-sidebar"></i> Topic
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-left -->
+        <!-- END SIDEBAR LEFT -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <!-- Begin page heading -->
+                <h1 class="fa fa-list page-heading"> SET MQTT TOPIC <small>~Apps~</small> </h1>
+                <!-- End page heading -->
+
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-9">
+                        <!-- BEGIN TODAY VISITOR TILES -->
+                        <div class="panel panel-warning panel-square panel-no-border text-center">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">CHLORINE SCALE</h3>
+                            </div>
+
+                            <div class="panel-body">
+                                <h1 class="bolded tiles-number text-warning"><span id="floweight">~chloride_weight~</span> Kg</h1>
+                            </div>
+
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel panel-success panel-block-color -->
+                        <!-- END TODAY VISITOR TILES -->
+
+                    </div>
+                    <!-- /.col-sm-6 -->
+
+
+                    <!-- /.col-sm-6 -->
+                </div>
+                <!-- /.row -->
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-9">
+                        <!-- BEGIN TODAY VISITOR TILES -->
+                        <div class="panel panel-info panel-square panel-no-border text-center">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">BANK No.</h3>
+                            </div>
+                            <div class="panel-body">
+                                <h1 class="bolded tiles-number text-info"><span id="floweight">~bank_no~</span></h1>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel panel-success panel-block-color -->
+                        <!-- END TODAY VISITOR TILES -->
+
+                    </div>
+                    <!-- /.col-sm-6 -->
+
+
+                    <!-- /.col-sm-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+
+
+
+            <!-- BEGIN FOOTER -->
+            <footer class="fixed-bottom">
+                &copy; 2018 <a href="http://www.bklogy.com">BKLOGY - BK Technology</a><br />
+            </footer>
+            <!-- END FOOTER -->
+
+
+        </div>
+        <!-- /.page-content -->
+    </div>
+    <!-- /.wrapper -->
+    <!-- END PAGE CONTENT -->
+
+
+
+    <!-- BEGIN BACK TO TOP BUTTON -->
+    <div id="back-top">
+        <a href="#top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <!-- END BACK TO TOP -->
+
+
+    <!--
+		===========================================================
+		END PAGE
+		===========================================================
+		-->
+
+    <!--
+		===========================================================
+		Placed at the end of the document so the pages load faster
+		===========================================================
+		-->
+    <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/retina/retina.min.js"></script>
+    <script src="assets/plugins/nicescroll/jquery.nicescroll.js"></script>
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+
+
+
+    <!-- MAIN APPS JS -->
+
+    <script src="assets/js/apps.js"></script>
+</body>
+
+</html>
